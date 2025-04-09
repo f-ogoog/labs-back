@@ -14,7 +14,7 @@ $car_id = $_GET['id'];
 
 $sql = "SELECT 
             date,
-            description
+            description,
         FROM services
         WHERE car_id = $car_id";
 
@@ -25,6 +25,7 @@ if (mysqli_num_rows($result) > 0) {
             <tr>
                 <th>Дата виконання роботи</th>
                 <th>Опис</th>
+                <th>Створено</th>
             </tr>";
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
